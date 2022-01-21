@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyPrototype.PlantModel;
 
 namespace MyPrototype
 {
     public class Land
     {
-        public List<Plant> Plants = new List<Plant>();
+        public List<IMyCloneable<Plant>> Plants = new List<IMyCloneable<Plant>>();
         public Land()
         {
 

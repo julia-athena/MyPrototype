@@ -4,22 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPrototype
+namespace MyPrototype.PlantModel
 {
     public class WoodyPlant: Plant
     {
         public string WoodType;
         public string WoodColour;
 
-        public WoodyPlant(string name, string woodType, string woodColour) : base(name)
+        public WoodyPlant()
         {
-            WoodType = woodType;
-            WoodColour = woodColour;
+        }
+
+        public WoodyPlant(WoodyPlant woodyPlant) : base(woodyPlant)
+        {
+            WoodType = woodyPlant.WoodType;
+            WoodColour = woodyPlant.WoodColour;
         }
 
         public override Plant Clone()
         {
-            return new WoodyPlant(Name, WoodType, WoodColour);
+            return new WoodyPlant(this);
         }
     }
 }

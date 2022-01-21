@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPrototype
+namespace MyPrototype.PlantModel
 {
-    public abstract class Plant : IMyCloneable<Plant>
+    public abstract class Plant
     {
         public string Name;
 
-        public Plant(string name)
-        {
-            Name = name;
-        }
         public Plant(Plant plant)
         {
             Name = plant.Name;
         }
+
+        public Plant()
+        {
+        }
+
         public abstract Plant Clone();
     }
 }
