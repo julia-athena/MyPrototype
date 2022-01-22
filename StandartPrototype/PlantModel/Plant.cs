@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPrototype.PlantModel
+namespace StandartPrototype.PlantModel
 {
-    public abstract class Plant: IMyCloneable<Plant>
+    public abstract class Plant: ICloneable
     {
         public string Name;
 
@@ -19,6 +19,6 @@ namespace MyPrototype.PlantModel
         {
         }
 
-        public abstract Plant Clone();
+        public abstract object Clone();
     }
 }

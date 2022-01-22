@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPrototype.PlantModel
+namespace StandartPrototype.PlantModel
 {
-    public class Fruit : IMyCloneable<Fruit>
+    public class Fruit : ICloneable
     {
         public string FruitType;
         public int PlusToHealth;
@@ -21,7 +21,7 @@ namespace MyPrototype.PlantModel
             PlusToHealth = fruit.PlusToHealth;
         }
 
-        public Fruit Clone()
+        public object Clone()
         {
             return new Fruit(this);
         }
