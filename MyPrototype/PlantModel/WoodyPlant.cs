@@ -8,17 +8,15 @@ namespace MyPrototype.PlantModel
 {
     public class WoodyPlant: Plant
     {
-        public string WoodType;
-        public string WoodColour;
+        public IMyCloneable<Wood> Wood;
 
         public WoodyPlant()
         {
         }
 
-        public WoodyPlant(WoodyPlant woodyPlant) : base(woodyPlant)
+        protected WoodyPlant(WoodyPlant woodyPlant) : base(woodyPlant)
         {
-            WoodType = woodyPlant.WoodType;
-            WoodColour = woodyPlant.WoodColour;
+            Wood = woodyPlant.Wood.Clone();
         }
 
         public override Plant Clone()

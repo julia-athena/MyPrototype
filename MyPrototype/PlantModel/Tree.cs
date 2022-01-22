@@ -16,18 +16,16 @@ namespace MyPrototype.PlantModel
         {
         }
 
-        public Tree(Tree tree) : base(tree)
+        protected Tree(Tree tree) : base(tree)
         {
             CrownType = tree.CrownType;
             CrownSize = tree.CrownSize;
-            Fruit = tree.Fruit;
+            Fruit = tree.Fruit.Clone();
         }
 
         public override Plant Clone()
         {
-            var t = new Tree(this);
-            t.Fruit = Fruit.Clone();
-            return t;
+            return new Tree(this);
         }
     }
 }

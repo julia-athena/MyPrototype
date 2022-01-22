@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyPrototype
 {
-    public interface IMyCloneable<T>
+    public interface IMyCloneable<T> where T: IMyCloneable<T> // ограничиваем T, так чтобы он реалиовывал интерфейс IMyCloneable<T>
     {
         public T Clone();
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyPrototype.PlantModel
 {
-    public abstract class Plant : IMyCloneable<Plant>
+    public abstract class Plant: IMyCloneable<Plant>
     {
         public string Name;
 

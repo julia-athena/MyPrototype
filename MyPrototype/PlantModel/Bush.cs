@@ -8,24 +8,20 @@ namespace MyPrototype.PlantModel
 {
     public class Bush : WoodyPlant
     {
-        public bool WithThorns;
         public IMyCloneable<Fruit> Fruit;
 
         public Bush()
         {
         }
 
-        public Bush(Bush bush) : base(bush)
+        protected Bush(Bush bush) : base(bush)
         {
-            WithThorns = bush.WithThorns;
-            Fruit = bush.Fruit;
+            Fruit = bush.Fruit.Clone();
         }
 
         public override Plant Clone()
         {
-            var b = new Bush(this);
-            b.Fruit = Fruit.Clone();
-            return b;
+            return new Bush(this);
         }
     }
 }

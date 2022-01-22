@@ -8,12 +8,14 @@ namespace MyPrototype
         static void Main(string[] args)
         {
             var land = new Land();
-            //создадим 2 куста крыжовника, 2 куста смородины, 2 яблони
             var gooseberryPrototype = new Bush() {
-                Name = "Крыжовник", 
-                WoodType = "Гладкий", 
-                WoodColour = "Серый",
-                WithThorns = true,
+                Name = "Крыжовник",
+                Wood = new Wood()
+                {
+                    WithThorns = true,
+                    WoodColour = "Cерый",
+                    WoodTexture = "Гладкий",      
+                },
                 Fruit = new Fruit()
                 {
                     FruitType = "Ягода",
@@ -23,9 +25,12 @@ namespace MyPrototype
             var currantPrototype = new Bush()
             {
                 Name = "Cмородина",
-                WoodType = "Гладкий",
-                WoodColour = "Коричневый",
-                WithThorns = false,
+                Wood = new Wood()
+                {
+                    WithThorns = false,
+                    WoodColour = "Коричневый",
+                    WoodTexture = "Гладкий",
+                },
                 Fruit = new Fruit()
                 {
                     FruitType = "Ягода",
@@ -35,8 +40,12 @@ namespace MyPrototype
             var appleTree = new Tree()
             {
                 Name = "Яблоня",
-                WoodType = "Гладкий",
-                WoodColour = "Коричневый",
+                Wood = new Wood()
+                {
+                    WithThorns = false,
+                    WoodColour = "Коричневый",
+                    WoodTexture = "Гладкий",
+                },
                 Fruit = new Fruit()
                 {
                     FruitType = "Яблоко",
@@ -44,7 +53,7 @@ namespace MyPrototype
                 },
             };
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 var name = gooseberryPrototype.Name + $"-{i}";
                 land.AddPlantByPrototype(name, gooseberryPrototype);
